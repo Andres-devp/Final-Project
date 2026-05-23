@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Little Prince — Book vs. Film · Comparative Infographic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f5efe4;
+    --cream-2:#ede4d3;
+    --ink:#1a2438;
+    --ink-soft:#34405c;
+    --body:#2a2e3a;
+    --muted:#6b6657;
+    --gold:#d4a04a;
+    --rose:#c97b6a;
+    --rule:#1a243822;
+    --max:1080px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--cream);
+    color:var(--body);
+    font-family:"DM Sans", system-ui, sans-serif;
+    font-size:15px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .poster{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:64px 56px 96px;
+    background:
+      radial-gradient(circle at 88% 6%, #d4a04a18, transparent 38%),
+      radial-gradient(circle at 6% 92%, #c97b6a14, transparent 40%),
+      var(--cream);
+  }
+  .mono{font-family:"JetBrains Mono", ui-monospace, monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase;}
+  h1,h2,h3,h4{font-family:"DM Serif Display", serif; font-weight:400; color:var(--ink); margin:0;}
+  p{margin:0;}
+
+  .sketch{display:block; mix-blend-mode:multiply;}
+
+  /* ── HERO ── */
+  .hero{position:relative; padding:24px 0 48px; border-bottom:1px solid var(--rule);}
+  .hero-top{display:flex; justify-content:space-between; align-items:center; color:var(--ink); margin-bottom:48px;}
+  .hero-top .badge{display:inline-flex; align-items:center; gap:10px;}
+  .hero-top .dot{width:8px; height:8px; border-radius:50%; background:var(--gold);}
+  .hero-grid{display:grid; grid-template-columns:1.2fr 1fr; gap:36px; align-items:center;}
+  .hero h1{font-size:84px; line-height:.95; letter-spacing:-.02em;}
+  .hero h1 em{font-style:italic; color:var(--ink-soft);}
+  .hero .kicker{color:var(--muted); margin-bottom:18px;}
+  .hero .sub{font-size:16px; color:var(--ink-soft); line-height:1.5; border-left:2px solid var(--gold); padding-left:16px; max-width:38ch; margin-top:24px;}
+  .hero-img{width:100%; aspect-ratio:1/1; max-width:340px; justify-self:end;}
+
+  /* ── SECTION CHROME ── */
+  section{padding:56px 0; border-bottom:1px solid var(--rule);}
+  section:last-of-type{border-bottom:none;}
+  .sec-head{display:flex; align-items:baseline; gap:18px; margin-bottom:24px;}
+  .sec-num{font-family:"JetBrains Mono", monospace; color:var(--gold); font-size:13px; letter-spacing:.18em;}
+  .sec-title{font-size:38px; line-height:1; letter-spacing:-.01em;}
+
+  /* generic two-pane */
+  .pane{display:grid; grid-template-columns:.85fr 1.15fr; gap:36px; align-items:center;}
+  .pane.flip{grid-template-columns:1.15fr .85fr;}
+  .pane.flip .pane-img{order:2;}
+  .pane-img{width:100%; aspect-ratio:1/1; border-radius:6px; overflow:hidden;}
+  .pane-img img{width:100%; height:100%; object-fit:cover; mix-blend-mode:multiply;}
+
+  /* ── 01 COMPARE ── */
+  .compare{display:grid; grid-template-columns:1fr 1fr; gap:0; border:1px solid var(--rule); border-radius:6px; overflow:hidden;}
+  .col{padding:22px 24px; background:#fffaf0a8;}
+  .col + .col{border-left:1px solid var(--rule); background:#1a24380a;}
+  .col-label{display:flex; align-items:center; gap:8px; margin-bottom:12px;}
+  .col-label .tag{font-family:"JetBrains Mono", monospace; font-size:10.5px; letter-spacing:.14em; padding:3px 8px; border-radius:99px; text-transform:uppercase;}
+  .col-label .tag.gold{border:1px solid var(--gold); color:var(--gold);}
+  .col-label .tag.rose{border:1px solid var(--rose); color:var(--rose);}
+  .col h3{font-size:22px; line-height:1.15; margin-bottom:8px;}
+  .meta-row{display:grid; grid-template-columns:auto 1fr; gap:6px 16px; margin-top:6px;}
+  .meta-row dt{font-family:"JetBrains Mono", monospace; font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted);}
+  .meta-row dd{margin:0; color:var(--ink);}
+
+  /* ── 02 TIMELINE ── */
+  .timeline{display:grid; grid-template-columns:1fr 1fr; gap:24px; position:relative;}
+  .timeline::before{content:""; position:absolute; left:50%; top:0; bottom:0; width:1px; background:linear-gradient(var(--gold), var(--rose)); transform:translateX(-.5px);}
+  .tl-card{background:#fffaf0; border:1px solid var(--rule); border-radius:6px; padding:20px 22px; position:relative;}
+  .tl-year{font-family:"DM Serif Display", serif; font-size:42px; color:var(--ink); line-height:1;}
+  .tl-tag{margin-top:4px; color:var(--muted);}
+  .tl-card p{margin-top:10px; font-size:14px;}
+  .tl-dot{position:absolute; top:30px; width:12px; height:12px; border-radius:50%; background:var(--cream); border:2px solid var(--gold);}
+  .tl-card.left .tl-dot{right:-30px;}
+  .tl-card.right .tl-dot{left:-30px; border-color:var(--rose);}
+
+  /* ── 03 CONFLICT ── */
+  .conflict-grid{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  .conflict-card{background:#fffaf0; border:1px solid var(--rule); border-radius:6px; padding:22px 24px;}
+  .conflict-card h4{font-size:20px; margin-bottom:6px;}
+  .conflict-card .lab{color:var(--gold); margin-bottom:10px;}
+  .conflict-card.rose .lab{color:var(--rose);}
+  .conflict-card .resolve{margin-top:12px; padding-top:12px; border-top:1px dashed var(--rule); font-size:13.5px; color:var(--ink-soft);}
+  .conflict-card .resolve strong{color:var(--ink);}
+
+  /* ── 04/05 TRIPLET ── */
+  .triplet{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+  .tri-card{background:#fffaf0; border:1px solid var(--rule); border-radius:6px; padding:20px 20px 22px;}
+  .tri-card .n{font-family:"DM Serif Display", serif; font-size:42px; line-height:1; color:var(--gold);}
+  .tri-card.alt .n{color:var(--rose);}
+  .tri-card h4{font-size:17px; margin:6px 0 6px;}
+  .tri-card p{font-size:13.5px;}
+
+  /* ── 06 VERDICT ── */
+  .verdict{display:grid; grid-template-columns:.9fr 1.1fr; gap:32px; align-items:center; background:var(--ink); color:var(--cream); border-radius:8px; padding:36px 40px;}
+  .verdict h3{color:var(--cream); font-size:34px; line-height:1.05; letter-spacing:-.01em;}
+  .verdict .verdict-tag{color:var(--gold); margin-bottom:10px;}
+  .verdict p{color:#e7dfd0; font-size:14.5px;}
+  .verdict .stamp{display:inline-block; margin-top:18px; padding:8px 14px; border:1px solid var(--gold); color:var(--gold); font-family:"JetBrains Mono", monospace; font-size:11px; letter-spacing:.16em; border-radius:99px; text-transform:uppercase;}
+
+  /* ── 07 RECO ── */
+  .reco{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
+  .reco-card{border:1px solid var(--rule); border-radius:6px; padding:18px 20px; background:#fffaf0;}
+  .reco-card.pick{background:var(--gold); border-color:var(--gold); color:var(--ink);}
+  .reco-card h4{font-size:17px; margin-bottom:4px;}
+  .reco-card .score{font-family:"JetBrains Mono", monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-bottom:8px;}
+  .reco-card.pick .score{color:#7a5a1d;}
+  .reco-card p{font-size:13.5px;}
+
+  /* ── 08 LESSON ── */
+  .lesson{text-align:center; padding:64px 0;}
+  .lesson .quote{font-family:"DM Serif Display", serif; font-style:italic; font-size:54px; line-height:1.1; color:var(--ink); max-width:22ch; margin:0 auto;}
+  .lesson .quote span{color:var(--rose);}
+  .lesson .attribution{margin-top:18px; color:var(--muted);}
+
+  /* ── 09 SOCIAL ── */
+  .social-list{display:grid; gap:0;}
+  .social-item{display:grid; grid-template-columns:46px 1fr; gap:14px; padding:14px 0; border-top:1px solid var(--rule);}
+  .social-item:last-child{border-bottom:1px solid var(--rule);}
+  .social-item .ico{width:44px; height:44px; border-radius:50%; border:1.5px solid var(--ink); display:grid; place-items:center; color:var(--ink);}
+  .social-item h4{font-size:16px; margin-bottom:2px;}
+  .social-item p{font-size:13.5px;}
+
+  /* ── 10 REFLECTION ── */
+  .reflection{background:linear-gradient(180deg,#fffaf0,#fff7e8); border:1px solid var(--rule); border-radius:8px; padding:30px 34px;}
+  .reflection .label{color:var(--gold); margin-bottom:8px;}
+  .reflection h3{font-size:26px; margin-bottom:14px;}
+  .reflection p{font-size:14.5px; line-height:1.65; margin-bottom:12px; color:var(--ink-soft);}
+  .reflection p:last-child{margin-bottom:0;}
+  .reflection em{color:var(--ink); font-style:italic; font-weight:500;}
+
+  /* ── FOOTER ── */
+  footer{margin-top:48px; padding-top:24px; border-top:1px solid var(--rule); display:flex; justify-content:space-between; color:var(--muted); font-family:"JetBrains Mono", monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase;}
+
+  @media (max-width:860px){
+    .poster{padding:32px 22px 60px;}
+    .hero h1{font-size:54px;}
+    .hero-grid,.compare,.timeline,.conflict-grid,.verdict,.triplet,.reco,.pane,.pane.flip{grid-template-columns:1fr;}
+    .pane.flip .pane-img{order:0;}
+    .timeline::before{display:none;}
+    .col + .col{border-left:none; border-top:1px solid var(--rule);}
+    .tl-card .tl-dot{display:none;}
+  }
+
+  /* ═══════════════════════════════════════════
+     PRINT / PDF  —  each .slide-page = 1 page
+     Open in Chrome → Ctrl+P → Save as PDF
+     Enable "Background graphics" option!
+  ═══════════════════════════════════════════ */
+  @media print {
+
+    @page { size: A4 landscape; margin: 0; }
+
+    /* Force colours */
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+      box-sizing: border-box !important;
+    }
+
+    html, body {
+      margin: 0 !important; padding: 0 !important;
+      width: 297mm !important;
+      font-family: "DM Sans", sans-serif !important;
+      font-size: 9.5pt !important;
+      line-height: 1.4 !important;
+      background: #f5efe4 !important;
+      color: #2a2e3a !important;
+    }
+
+    /* Strip scroll wrapper */
+    .poster {
+      max-width: none !important;
+      margin: 0 !important; padding: 0 !important;
+      background: transparent !important;
+    }
+
+    footer { display: none !important; }
+
+    /* ─── One full landscape page per section ─── */
+    .slide-page {
+      display: block !important;
+      width: 297mm !important;
+      height: 210mm !important;
+      min-height: 210mm !important;
+      max-height: 210mm !important;
+      padding: 10mm 15mm !important;
+      overflow: hidden !important;
+      page-break-after: always !important;
+      page-break-inside: avoid !important;
+      break-after: page !important;
+      break-inside: avoid !important;
+      border: none !important;
+      background:
+        radial-gradient(circle at 88% 6%, rgba(212,160,74,.12), transparent 38%),
+        radial-gradient(circle at 6% 92%, rgba(201,123,106,.1), transparent 40%),
+        #f5efe4 !important;
+    }
+    .slide-page:last-of-type {
+      page-break-after: avoid !important;
+      break-after: avoid !important;
+    }
+
+    /* ─── Hero / Cover ─── */
+    .hero.slide-page {
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      padding: 9mm 15mm 10mm !important;
+    }
+    .hero-top { margin-bottom: 0 !important; }
+    .hero-grid {
+      display: grid !important;
+      grid-template-columns: 1.25fr 1fr !important;
+      gap: 10mm !important;
+      align-items: center !important;
+      flex: 1 !important;
+    }
+    .hero h1 {
+      font-family: "DM Serif Display", serif !important;
+      font-size: 40pt !important;
+      line-height: .95 !important;
+      color: #1a2438 !important;
+    }
+    .hero h1 em { color: #34405c !important; }
+    .hero .kicker { margin-bottom: 3mm !important; font-size: 7pt !important; }
+    .hero .sub {
+      font-size: 10pt !important;
+      margin-top: 4mm !important;
+      border-left: 2px solid #d4a04a !important;
+      padding-left: 4mm !important;
+      max-width: none !important;
+    }
+    .hero-img {
+      width: 100% !important;
+      max-width: 185px !important;
+      aspect-ratio: 1/1 !important;
+      justify-self: end !important;
+      overflow: hidden !important;
+    }
+    .hero-img img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: contain !important;
+      mix-blend-mode: multiply !important;
+    }
+
+    /* ─── Section titles ─── */
+    .sec-head { margin-bottom: 2.5mm !important; }
+    .sec-num { font-size: 6.5pt !important; color: #d4a04a !important; }
+    .sec-title {
+      font-family: "DM Serif Display", serif !important;
+      font-size: 20pt !important;
+      line-height: 1.05 !important;
+      margin-bottom: 4mm !important;
+      color: #1a2438 !important;
+    }
+
+    /* ─── Two-pane grid ─── */
+    .pane {
+      display: grid !important;
+      grid-template-columns: .85fr 1.15fr !important;
+      gap: 7mm !important;
+      align-items: center !important;
+      margin-top: 0 !important;
+    }
+    .pane.flip { grid-template-columns: 1.15fr .85fr !important; }
+    .pane.flip .pane-img { order: 2 !important; }
+    .pane-img {
+      width: 100% !important;
+      aspect-ratio: 1 !important;
+      overflow: hidden !important;
+      max-height: 128mm !important;
+    }
+    .pane-img img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: contain !important;
+      mix-blend-mode: multiply !important;
+    }
+
+    /* ─── Slide 01 — compare table ─── */
+    .compare {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      border: 1px solid #1a243822 !important;
+      border-radius: 5px !important;
+      overflow: hidden !important;
+    }
+    .col { padding: 4.5mm 5.5mm !important; background: rgba(255,250,240,.7) !important; }
+    .col + .col { border-left: 1px solid #1a243822 !important; background: rgba(26,36,56,.05) !important; }
+    .col h3 { font-size: 11.5pt !important; margin-bottom: 2.5mm !important; color: #1a2438 !important; }
+    .col-label { margin-bottom: 2mm !important; }
+    .meta-row { gap: 1.5px 8px !important; }
+    .meta-row dt { font-size: 7.5pt !important; color: #6b6657 !important; }
+    .meta-row dd { font-size: 8.5pt !important; }
+
+    /* ─── Slide 02 — timeline ─── */
+    .timeline {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 7mm !important;
+      position: relative !important;
+    }
+    .timeline::before { display: block !important; background: linear-gradient(#d4a04a, #c97b6a) !important; }
+    .tl-card { background: #fffaf0 !important; border: 1px solid #1a243822 !important; border-radius: 5px !important; padding: 4.5mm 5mm !important; }
+    .tl-year { font-size: 22pt !important; color: #1a2438 !important; }
+    .tl-tag { font-size: 6.5pt !important; color: #6b6657 !important; margin-top: 1mm !important; }
+    .tl-card p { font-size: 9pt !important; margin-top: 2mm !important; line-height: 1.4 !important; }
+
+    /* ─── Slide 03 — conflict ─── */
+    .conflict-grid {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 5mm !important;
+    }
+    .conflict-card { background: #fffaf0 !important; border: 1px solid #1a243822 !important; border-radius: 5px !important; padding: 5mm 5.5mm !important; }
+    .conflict-card h4 { font-size: 11pt !important; margin-bottom: 2mm !important; color: #1a2438 !important; }
+    .conflict-card .lab { font-size: 7pt !important; margin-bottom: 2.5mm !important; color: #d4a04a !important; }
+    .conflict-card.rose .lab { color: #c97b6a !important; }
+    .conflict-card .resolve { font-size: 8.5pt !important; margin-top: 3mm !important; padding-top: 3mm !important; border-top: 1px dashed #1a243822 !important; color: #34405c !important; }
+
+    /* ─── Slides 04 & 05 — triplet ─── */
+    .triplet { display: grid !important; gap: 4mm !important; }
+    .pane.flip .triplet { grid-template-columns: repeat(3, 1fr) !important; }
+    .pane:not(.flip) .triplet { grid-template-columns: 1fr !important; }
+    .tri-card { background: #fffaf0 !important; border: 1px solid #1a243822 !important; border-radius: 5px !important; padding: 3.5mm 4.5mm !important; }
+    .tri-card .n { font-size: 19pt !important; line-height: 1 !important; color: #d4a04a !important; }
+    .tri-card.alt .n { color: #c97b6a !important; }
+    .tri-card h4 { font-size: 10.5pt !important; margin: 1.5px 0 3px !important; color: #1a2438 !important; }
+    .tri-card p { font-size: 8.5pt !important; line-height: 1.35 !important; }
+
+    /* ─── Slide 06 — verdict (dark) ─── */
+    .verdict {
+      display: grid !important;
+      grid-template-columns: .9fr 1.1fr !important;
+      gap: 7mm !important;
+      align-items: center !important;
+      background: #1a2438 !important;
+      color: #f5efe4 !important;
+      border-radius: 7px !important;
+      padding: 7mm 9mm !important;
+      margin-top: 3mm !important;
+    }
+    .verdict h3 { font-size: 16.5pt !important; line-height: 1.1 !important; color: #f5efe4 !important; }
+    .verdict .verdict-tag { font-size: 7pt !important; color: #d4a04a !important; margin-bottom: 2.5mm !important; }
+    .verdict p { font-size: 9pt !important; color: #e7dfd0 !important; margin-top: 2.5mm !important; }
+    .verdict strong { color: #d4a04a !important; }
+    .verdict .stamp { font-size: 6.5pt !important; color: #d4a04a !important; border: 1px solid #d4a04a !important; border-radius: 99px !important; padding: 1.5mm 3mm !important; margin-top: 3.5mm !important; display: inline-block !important; }
+
+    /* ─── Slide 07 — reco ─── */
+    .reco {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 4.5mm !important;
+    }
+    .reco-card { border: 1px solid #1a243822 !important; border-radius: 5px !important; padding: 4mm 5mm !important; background: #fffaf0 !important; }
+    .reco-card.pick { background: #d4a04a !important; border-color: #d4a04a !important; }
+    .reco-card h4 { font-size: 11pt !important; margin-bottom: 2px !important; color: #1a2438 !important; }
+    .reco-card .score { font-size: 7pt !important; color: #6b6657 !important; margin-bottom: 2.5mm !important; }
+    .reco-card.pick .score { color: #7a5a1d !important; }
+    .reco-card p { font-size: 9pt !important; }
+
+    /* ─── Slide 08 — quote ─── */
+    .lesson {
+      padding: 0 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      height: 165mm !important;
+      text-align: center !important;
+    }
+    .lesson .quote {
+      font-size: 25pt !important;
+      max-width: 24ch !important;
+      color: #1a2438 !important;
+    }
+    .lesson .quote span { color: #c97b6a !important; }
+    .lesson .attribution { font-size: 8pt !important; margin-top: 5mm !important; color: #6b6657 !important; }
+
+    /* ─── Slide 09 — social ─── */
+    .social-list { display: grid !important; }
+    .social-item {
+      display: grid !important;
+      grid-template-columns: 38px 1fr !important;
+      gap: 4mm !important;
+      padding: 2.5mm 0 !important;
+      border-top: 1px solid #1a243822 !important;
+    }
+    .social-item:last-child { border-bottom: 1px solid #1a243822 !important; }
+    .social-item .ico { width: 30px !important; height: 30px !important; border-radius: 50% !important; border: 1.5px solid #1a2438 !important; display: grid !important; place-items: center !important; }
+    .social-item h4 { font-size: 10.5pt !important; margin-bottom: 0 !important; color: #1a2438 !important; }
+    .social-item p { font-size: 8.5pt !important; line-height: 1.38 !important; }
+
+    /* ─── Slide 10 — reflection ─── */
+    .reflection {
+      background: linear-gradient(180deg, #fffaf0, #fff7e8) !important;
+      border: 1px solid #1a243822 !important;
+      border-radius: 7px !important;
+      padding: 5mm 7mm !important;
+    }
+    .reflection .label { font-size: 7pt !important; color: #d4a04a !important; margin-bottom: 2.5mm !important; }
+    .reflection h3 { font-size: 12.5pt !important; margin-bottom: 3mm !important; color: #1a2438 !important; }
+    .reflection p { font-size: 9pt !important; line-height: 1.5 !important; color: #34405c !important; margin-bottom: 0 !important; }
+    .reflection em { color: #1a2438 !important; }
+
+  } /* end @media print */
+</style>
+</head>
+<body>
+<main class="poster">
+
+  <!-- HERO -->
+  <header class="hero slide-page">
+    <div class="hero-top mono">
+      <div class="badge"><span class="dot"></span><span>Final Project · English Class</span></div>
+      <div>A Comparative Infographic — 2026</div>
+    </div>
+
+    <div class="hero-grid">
+      <div>
+        <div class="kicker mono">Book (1943) &nbsp;✦&nbsp; Film (2015)</div>
+        <h1>The Little<br/>Prince,<br/><em>twice told.</em></h1>
+        <p class="sub">Saint-Exupéry's novella meets Mark Osborne's 2015 animated film — side by side.</p>
+
+        <!-- Student names -->
+        <div style="margin-top:28px; display:flex; flex-direction:column; gap:4px;">
+          <div class="mono" style="color:var(--gold); margin-bottom:8px;">✦ Presented by</div>
+          <div style="font-family:'DM Serif Display',serif; font-size:19px; color:var(--ink);">Andres Doncel</div>
+          <div style="font-family:'DM Serif Display',serif; font-size:19px; color:var(--ink);">Jhon Sebastian Mejia</div>
+          <div style="font-family:'DM Serif Display',serif; font-size:19px; color:var(--ink);">Sofia Guitierez</div>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img class="sketch" src="images/s7_recommendation.png" alt="Watercolor sketch of hands holding a book full of stars" style="width:100%; height:100%; object-fit:contain;"/>
+      </div>
+    </div>
+  </header>
+
+  <!-- 01 GENERAL DATA -->
+  <section class="slide-page">
+    <div class="sec-head"><span class="sec-num">01 / GENERAL DATA</span></div>
+    <h2 class="sec-title">Same title. Two centuries apart.</h2>
+
+    <div class="pane" style="margin-top:24px;">
+      <div class="pane-img"><img src="images/s1_general_data.png" alt="Watercolor of a biplane and a clapperboard"/></div>
+      <div class="compare">
+        <div class="col">
+          <div class="col-label"><span class="tag gold">The Book</span></div>
+          <h3>Le Petit Prince</h3>
+          <dl class="meta-row">
+            <dt>Author</dt><dd>Antoine de Saint-Exupéry</dd>
+            <dt>Year</dt><dd>1943 · New York</dd>
+            <dt>Medium</dt><dd>Illustrated novella · ~96 pp.</dd>
+          </dl>
+        </div>
+        <div class="col">
+          <div class="col-label"><span class="tag rose">The Film</span></div>
+          <h3>The Little Prince</h3>
+          <dl class="meta-row">
+            <dt>Director</dt><dd>Mark Osborne</dd>
+            <dt>Year</dt><dd>2015 · France</dd>
+            <dt>Medium</dt><dd>Stop-motion + CG · 108 min</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 HISTORICAL BACKGROUND -->
+  <section class="slide-page">
+    <div class="sec-head"><span class="sec-num">02 / HISTORICAL BACKGROUND</span></div>
+    <h2 class="sec-title">Two worlds, one warning.</h2>
+
+    <div class="pane flip" style="margin-top:24px;">
+      <div class="timeline">
+        <div class="tl-card left">
+          <div class="tl-year">1943</div>
+          <div class="tl-tag mono">WAR · EXILE</div>
+          <p>Saint-Exupéry wrote the book in exile during WWII — a longing for innocence in a world at war.</p>
+          <span class="tl-dot"></span>
+        </div>
+        <div></div>
+        <div></div>
+        <div class="tl-card right">
+          <div class="tl-year">2015</div>
+          <div class="tl-tag mono">SCREENS · SPEED</div>
+          <p>Osborne's film arrives in an age of schedules and devices — a protest against childhood lost to grown-up plans.</p>
+          <span class="tl-dot"></span>
+        </div>
+      </div>
+      <div class="pane-img"><img src="images/s2_historical_background.png" alt="Watercolor of a desert biplane next to gray city towers"/></div>
+    </div>
+  </section>
+
+  <!-- 03 MAIN CONFLICT -->
+  <section class="slide-page">
+    <div class="sec-head"><span class="sec-num">03 / MAIN CONFLICT &amp; RESOLUTION</span></div>
+    <h2 class="sec-title">Heart vs. world.</h2>
+
+    <div class="pane" style="margin-top:24px;">
+      <div class="pane-img"><img src="images/s3_main_conflict.png" alt="Watercolor of the prince on a planet and a girl in a window"/></div>
+      <div class="conflict-grid">
+        <div class="conflict-card">
+          <div class="lab mono">▶ Book</div>
+          <h4>Loneliness in a world of grown-ups.</h4>
+          <div class="resolve"><strong>Solved by:</strong> the fox — love is built with time.</div>
+        </div>
+        <div class="conflict-card rose">
+          <div class="lab mono">▶ Film</div>
+          <h4>A child crushed by a "Life Plan."</h4>
+          <div class="resolve"><strong>Solved by:</strong> a girl who chooses imagination over conformity.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 SIMILARITIES -->
+  <section class="slide-page">
+    <div class="sec-head"><span class="sec-num">04 / THREE SIMILARITIES</span></div>
+    <h2 class="sec-title">What both versions hold sacred.</h2>
+
+    <div class="pane flip" style="margin-top:24px;">
+      <div class="triplet" style="grid-template-columns:1fr 1fr 1fr;">
+        <div class="tri-card"><div class="n">01</div><h4>The Rose</h4><p>Fragile, unique love.</p></div>
+        <div class="tri-card"><div class="n">02</div><h4>The Fox</h4><p>"Tame me" — connection takes time.</p></div>
+        <div class="tri-card"><div class="n">03</div><h4>Asteroid B-612</h4><p>Home and responsibility.</p></div>
+      </div>
+      <div class="pane-img"><img src="images/s4_similarities.png" alt="Watercolor of the rose, the fox, and the prince's planet"/></div>
+    </div>
+  </section>
+
+  <!-- 05 DIFFERENCES -->
+  <section class="slide-page">
+    <div class="sec-head"><span class="sec-num">05 / THREE DIFFERENCES</span></div>
+    <h2 class="sec-title">Where the film takes a new path.</h2>
+
+    <div class="pane" style="margin-top:24px;">
+      <div class="pane-img"><img src="images/s5_differences.png" alt="Watercolor of an open book next to a glowing screen"/></div>
+      <div class="triplet" style="grid-template-columns:1fr;">
+        <div class="tri-card alt"><div class="n">01</div><h4>The Little Girl</h4><p>A modern child narrator invented for the film.</p></div>
+        <div class="tri-card alt"><div class="n">02</div><h4>A grown-up Prince</h4><p>"Mr. Prince" — adult, gray, forgetful. Film only.</p></div>
+        <div class="tri-card alt"><div class="n">03</div><h4>Two visual languages</h4><p>Stop-motion for the story; CG for the modern world.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 VERDICT -->
+  <section class="slide-page">
+    <div class="sec-head"><span class="sec-num">06 / WHICH TELLS IT BETTER</span></div>
+    <h2 class="sec-title">They complete each other.</h2>
+
+    <div class="verdict" style="margin-top:22px;">
+      <div>
+        <h3>The book plants the rose.<br/>The film waters it.</h3>
+        <span class="stamp">My final verdict</span>
+      </div>
+      <div>
+        <div class="verdict-tag mono">★ Why</div>
+        <p>The <strong style="color:var(--gold)">book</strong> is purer and more poetic — it trusts the silence between the words.</p>
+        <p style="margin-top:10px;">The <strong style="color:var(--gold)">film</strong> makes the message urgent for today. Read first, watch second.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 RECOMMENDATION -->
+  <section class="slide-page">
+    <div class="sec-head"><span class="sec-num">07 / RECOMMENDATION</span></div>
+    <h2 class="sec-title">What I would tell a classmate.</h2>
+
+    <div class="pane flip" style="margin-top:24px;">
+      <div class="reco" style="grid-template-columns:1fr 1fr 1fr;">
+        <div class="reco-card"><div class="score mono">Reading</div><h4>The book</h4><p>Slow, illustrated, quotable.</p></div>
+        <div class="reco-card"><div class="score mono">Listening</div><h4>The film</h4><p>Clear English, beautiful visuals.</p></div>
+        <div class="reco-card pick"><div class="score mono">My pick</div><h4>Both — in order</h4><p>Read first, then watch.</p></div>
+      </div>
+      <div class="pane-img"><img src="images/s8_life_lesson.png" alt="Watercolor of the prince standing on his planet at sunrise"/></div>
+    </div>
+  </section>
+
+  <!-- 08 LIFE LESSON -->
+  <section class="lesson slide-page">
+    <div class="mono" style="color:var(--muted); margin-bottom:14px;">08 / THE LIFE LESSON</div>
+    <p class="quote">What is essential is <span>invisible</span> to the eye.</p>
+    <p class="attribution mono">— the fox, to the little prince</p>
+  </section>
+
+  <!-- 09 SOCIAL PARTICIPATION -->
+  <section class="slide-page">
+    <div class="sec-head"><span class="sec-num">09 / FROM STORY → REAL LIFE</span></div>
+    <h2 class="sec-title">Water your rose.</h2>
+
+    <div class="pane" style="margin-top:24px;">
+      <div class="pane-img"><img src="images/s9_social_participation.png" alt="Watercolor sketch of figures caring for a rose, connecting with others, and speaking up"/></div>
+      <div class="social-list">
+        <div class="social-item">
+          <div class="ico"><svg width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="7" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3 18 C 4 13 16 13 17 18" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></div>
+          <div><h4>Care, consistently</h4><p>The Prince tended his rose every single day. Real social participation means showing up repeatedly, not just once — for a friend, a cause, or a community.</p></div>
+        </div>
+        <div class="social-item">
+          <div class="ico"><svg width="20" height="20" viewBox="0 0 20 20"><path d="M10 3 C 6 7 6 11 10 17 C 14 11 14 7 10 3 Z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></div>
+          <div><h4>Look beneath the surface</h4><p>The fox teaches that what is essential is invisible — empathy means listening to understand, not just to reply. We build stronger communities when we truly see each other.</p></div>
+        </div>
+        <div class="social-item">
+          <div class="ico"><svg width="20" height="20" viewBox="0 0 20 20"><path d="M3 10 L17 10 M10 3 L10 17" stroke="currentColor" stroke-width="1.5"/></svg></div>
+          <div><h4>Question "serious" logic</h4><p>The grown-ups in the story only count and measure. A socially engaged citizen asks <em>why</em> — not just how much. Critical thinking is itself a form of participation.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 ENGLISH REFLECTION -->
+  <section class="slide-page">
+    <div class="sec-head"><span class="sec-num">10 / ENGLISH IMPROVEMENT</span></div>
+    <h2 class="sec-title">In my own voice.</h2>
+
+    <div class="pane flip" style="margin-top:24px;">
+      <div class="reflection">
+        <div class="label mono">★ Personal reflection</div>
+        <h3>Reading the desert, listening to the stars.</h3>
+        <p>Reading <em>The Little Prince</em> in English taught us new vocabulary — <em>tame</em>, <em>essential</em>, <em>baobab</em>, <em>wither</em> — and Saint-Exupéry's gentle, repeated sentences trained us to read slowly and carefully. Watching the 2015 film right after sharpened our listening: different characters speak in very different registers, so we had to follow tone, not just words. Together, both resources pushed us to write using comparison language like <em>however</em>, <em>whereas</em>, and <em>in contrast</em> — and that is the skill we are most proud to carry forward.</p>
+      </div>
+      <div class="pane-img"><img src="images/s10_english_improvement.png" alt="Watercolor sketch of an open book and a figure listening with headphones"/></div>
+    </div>
+  </section>
+
+  <footer>
+    <div>The Little Prince · Book × Film · Comparative Study</div>
+    <div>Final Project · 2026</div>
+  </footer>
+
+</main>
+</body>
+</html>
